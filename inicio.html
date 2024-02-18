@@ -33,7 +33,7 @@
                     <a class="nav-link" href="#">Capacitacion</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contactanos</a>
+                    <a class="nav-link" href="#fondo2">Contactanos</a>
                   </li>
                  
                 </ul>
@@ -115,28 +115,27 @@
 
             <section id="fondo2" style="padding-top: 50px;">
                 <p class="titulo1 nunito">Contacto</p>
-                <form method="#" enctype="multipart/form-data">
+                <form id="contact" method="post"  action="enviar_correo.php">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                   </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="mail@dominio.com">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="mail@dominio.com">
                   </div>
                   <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Tu consulta</label>
-                    <textarea class="form-control" id="consulta" rows="3"></textarea>
-                  </div>
-                  <input type="submit" class="btn btn-primary color-boton" value="Enviar">      
-
+                    <textarea class="form-control" id="consulta" name="mensaje" rows="3"></textarea>
+                  </div>                     
+                  <button name="submit" class="btn btn-primary color-boton" type="submit" id="contact-submit" data-submit="...Enviar">Enviar</button>
                 </form>
             </section>       
           </main>
 
           <footer>
             <div class="container">
-              <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados. | comercial@nik-studio.com.ar | 1568249146</p>
+              <p>&copy; 2024 NIK-STUDIO. Todos los derechos reservados. | comercial@nik-studio.com.ar | 1568249146</p>
             </div>
           </footer>
 
