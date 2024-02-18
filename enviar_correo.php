@@ -48,7 +48,9 @@ $mail->AltBody = "{$mensaje} \n\n Formulario de ejemplo By DonWeb"; // Texto sin
 
 $estadoEnvio = $mail->Send(); 
 if($estadoEnvio){
-    echo "El correo fue enviado correctamente.";
+    header("Location: enviado.html");
+    exit; 
 } else {
-    echo "Ocurrió un error inesperado.";
+    header("Location: error.html");
+    exit; 
 }
