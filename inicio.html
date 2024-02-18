@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/2cbbc87d30.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fondo-nav">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="img/LogoNav.png" style="width: 100px;"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                  <li class="nav-item ">
+                    <a class="nav-link active navbar-nav-texto" aria-current="page" href="#">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Tecnologías</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Capacitacion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contactanos</a>
+                  </li>
+                 
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <main>
+        <section id="nostros">
+            <div id="carouselExample" class="carousel slide">                
+                <div class="carousel-inner">                    
+                        <div class="carousel-item active ">
+                            <img src="img/imagen1.jpeg" class="d-block w-100 imagen-opacity" alt="...">
+                         </div>
+                  <div class="carousel-item">
+                    <img src="img/imagen2.jpeg" class="d-block w-100 imagen-opacity" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/imagen3.jpeg" class="d-block w-100 imagen-opacity" alt="...">
+                  </div>
+                </div>
+               
+                
+                <div class="fixed-text">
+                    <p>NIK<span>|</span>STUDIO</p>
+                    <p class="texto_terciario">Somos una empresa joven, dominamos las ultimas tecnologías
+                        para generar soluciones avanzadas a medida de nuestros clientes.
+                        </p>
+                </div>
+            </div>
+        </section>
+        
+            <section id="fondo1">
+                <p class="titulo1 nunito">Tecnologías</p>
+               <div class="tecnologias">      
+                <div class="fila">
+                    <div class="caja"><i class="fa-brands fa-html5 fa-2xl"></i></div>
+                    <div class="caja"><i class="fa-brands fa-css3-alt fa-2xl"></i></div>
+                    <div class="caja"><i class="fa-brands fa-js fa-2xl"></i></div>
+                    <div class="caja"><i class="fa-brands fa-java fa-2xl"></i></div>
+                    <div class="caja"><i class="fa-brands fa-php fa-2xl"></i></div>
+                </div>
+                <div class="fila">               
+                    <div class="caja"><i class="fa-brands fa-microsoft"></i></div>
+                    <div class="caja"><i class="fa-brands fa-react fa-2xl"></i></div>
+                    <div class="caja"><i class="fa-brands fa-node fa-2xl"></i></div>
+                    <div class="caja"><i class="fa-brands fa-symfony fa-2xl"></i></div>
+                    <div class="caja"><i class="fa-brands fa-laravel fa-2xl"></i></div>   
+                </div>             
+               </div> 
+            </section>
+
+            <section id="fondo1">
+                <p class="titulo1 nunito">Capacitación</p>
+                    <div class="contenedor_capacitacion">           
+
+                      <div class="card" style="width: 22rem;">
+                        <img src="img/programacionInsitu.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title nunito">Situada</h5>
+                          <p class="card-text">Brindamos capacitaciones a empresas y gobiernos, trabajamos con grupos
+                            reducidos, realizamos seguimiento personalizado sobre cada estudiante
+                            y elaboramos informes de avance según objetivos.
+                            </p>
+                       
+                        </div>
+                      </div>
+
+                      <div class="card" style="width: 22rem;">
+                        <img src="img/virtual.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title nunito">Virtual</h5>
+                          <p class="card-text">Tenemos una amplia gama de cursos iniciales, intermedio y avanzadas en las últimas tecnologías del mercado. </p>
+                        
+                        </div>
+                      </div>
+                    </div>
+            </section>    
+
+            <section id="fondo2" style="padding-top: 50px;">
+                <p class="titulo1 nunito">Contacto</p>
+                <form method="#" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="mail@dominio.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Tu consulta</label>
+                    <textarea class="form-control" id="consulta" rows="3"></textarea>
+                  </div>
+                  <input type="submit" class="btn btn-primary color-boton" value="Enviar">      
+
+                </form>
+            </section>       
+          </main>
+
+          <footer>
+            <div class="container">
+              <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados. | comercial@nik-studio.com.ar | 1568249146</p>
+            </div>
+          </footer>
+
+    
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>
