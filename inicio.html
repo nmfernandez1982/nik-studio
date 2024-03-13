@@ -41,15 +41,103 @@
             </div>
         </nav>
           <main>
-        <section id="nosotros">          
+            <section id="nosotros">          
             <div id="imageResponsive">
               <img src="img/imagen1.jpeg">
               <h1>NIK<span>|</span>STUDIO</h1> 
               <p>Somos una empresa joven, dominamos las ultimas tecnologías
                 para generar soluciones avanzadas a medida de nuestros clientes.</p>
-            </div>               
-                  
-        </section>
+            </div>                  
+            </section>
+
+            <section id="tecnologias">
+              <h2>Tecnologías</h2>               
+              <div class="containerTecnologias">
+                <div class="grupo">
+                  <div class="item"><i class="fa-brands fa-css3-alt fa-2xl"></i></div>
+                  <div class="item"><i class="fa-brands fa-js fa-2xl"></i></div>
+                  <div class="item"><i class="fa-brands fa-java fa-2xl"></i></div>
+                  <div class="item"><i class="fa-brands fa-php fa-2xl"></i></div>
+                </div>
+                <div class="grupo">
+                  <div class="item"><i class="fa-brands fa-microsoft"></i></div>
+                  <div class="item"><i class="fa-brands fa-react fa-2xl"></i></div>
+                  <div class="item"><i class="fa-brands fa-node fa-2xl"></i></div>
+                  <div class="item"><i class="fa-brands fa-laravel fa-2xl"></i></div>
+                </div>
+              </div>       
+          </section>
+
+
+            <section id="capacitacion">
+              <h2>Capacitación</h2>    
+                    <div class="container">
+                      <div class="row">                       
+                        <div class="col">
+                          <div class="card" >
+                            <img src="img/programacionInsitu.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title nunito">Situada</h5>
+                              <p class="card-text">Brindamos capacitaciones a empresas y gobiernos, trabajamos con grupos
+                                reducidos, realizamos seguimiento personalizado sobre cada estudiante
+                                y elaboramos informes de avance según objetivos.
+                                </p>                           
+                            </div>
+                          </div>
+                        </div>                       
+                        <div class="col">
+                          <div class="card" >
+                            <img src="img/virtual.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title nunito">Virtual</h5>
+                              <p class="card-text">Tenemos una amplia gama de cursos iniciales, intermedio y avanzadas en las últimas tecnologías del mercado. </p>
+                             </div>
+                          </div>
+                        </div>                      
+                      </div>
+                    </div>             
+            </section> 
+
+            <section id="contacto">  
+              <div id="formResponsive">
+                <h2>Contacto</h2>              
+                <form id="contact" method="post"  action="enviar_correo.php">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="mail@dominio.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Tu consulta</label>
+                    <textarea class="form-control" id="consulta" name="mensaje" rows="3"></textarea>
+                  </div>                     
+                  <button name="submit" class="btn btn-primary color-boton" type="submit" id="contact-submit" data-submit="...Enviar">Enviar</button>
+                </form>
+              </div>
+            </section>
+
+            
+              
+             
+           
+
+
+
+
+
+
+
+
+          </main>
+
+          <footer>
+            <div class="container">
+              <p>&copy; 2024 NIK-STUDIO. Todos los derechos reservados. | comercial@nik-studio.com.ar | 1568249146</p>
+            </div>
+          </footer>
         
             
 
