@@ -1,5 +1,214 @@
 
-             
+       
+
+
+
+
+
+.texto_presentacion
+{
+    font-size: 1em;
+}
+
+.texto_terciario
+{
+  margin-top: 50px;
+    font-size: 0.3em;
+}
+
+
+span
+{
+    color:#354691;
+}
+
+.contenedor
+{
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 500px; /* Altura opcional para el contenedor */
+  flex-direction: column;
+ 
+}
+
+
+
+
+
+  /*1/4 circulo*/
+
+  .cuarto-circulo 
+  {
+    width: 200px; 
+    height: 200px; 
+    opacity: 0.5;
+    background: #354691;
+    -moz-border-radius: 0 100% 0 0;
+    -webkit-border-radius: 0 100% 0 0;
+    border-radius: 0 100% 0 0;
+}
+
+
+
+  
+.imagen-opacity 
+{
+  opacity: 0.5 !important; /* Valor entre 0 (transparente) y 1 (opaco) */
+}
+
+
+.fixed-text 
+{
+  position: absolute;
+  top: 50px; /* ajusta la posición vertical según sea necesario */
+  left: 50%; /* centra horizontalmente */
+  transform: translateX(-50%); /* centra horizontalmente */
+  padding: 20px;
+  border-radius: 5px; 
+  font-size: 1em;
+}
+
+
+
+.fila 
+{
+  display: flex; /* La fila también será un contenedor flex */ 
+  align-items:center;
+  flex-direction:row;
+  height: 130px;  
+  width: 70%;
+  margin: auto;  
+}
+
+.caja 
+{  
+  flex: 1; /* El flex: 1 hace que todas las cajas tengan el mismo ancho */
+  background-color: #A77BAE;  
+  margin: 10px 30px; /* Márgenes para espaciar las cajas */  
+  border-radius: 10px; /* Radio de 10px para los bordes redondeados */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra con desplazamiento horizontal de 2px, desplazamiento vertical de 2px, desenfoque de 4px y opacidad de 20% */
+  height: 120px;  
+  text-align: center;  
+  color: wheat;  
+  font-size: 2em;
+}
+
+
+
+
+
+
+
+
+.contenedor_capacitacion
+{
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */  
+  height: 450px;
+}
+
+#contacto
+{
+width: 60%;
+}
+
+.card
+{
+  margin: 50px;
+  height: 80%; /* Altura del 100% del contenedor padre */
+}
+
+
+h5
+{
+  font-size: 2em !important;
+  color: black !important;
+}
+
+.card
+{
+  width: 300px;
+}
+
+.card-body
+{
+  background-color: #A77BAE;    
+}
+
+.card-title
+{
+  color: white !important;
+}
+
+.card-text
+{
+  font-size: 0.8em !important;
+  text-align: left;
+}
+
+#fondo2
+{
+  background-color:  #354691 !important; 
+  width: 50%;
+  margin: auto;
+}
+
+.form-label
+{
+  font-size: 2em !important;
+  color: white !important;
+  font-family: "Nunito";
+  font-optical-sizing: auto;
+  font-weight: 200;  
+  font-style: normal;
+}
+
+.color-boton
+{
+  background-color: #A77BAE   !important; 
+  border-color: #A77BAE;
+  
+}
+
+form
+{
+margin-bottom: 150px;
+}
+
+footer {  
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color:  #354691; 
+  border-top: 3px solid #A77BAE;
+  margin-top: 20px;
+}
+
+i 
+  {
+   margin-top: 50px !important;
+  }
+
+
+
+  @media only screen and (max-width: 767px) {
+    /* Estilos específicos para dispositivos móviles */
+    .texto_presentacion
+{
+    font-size: 0.5em;
+}
+
+
+
+  }
+
+      
 
                   
          
