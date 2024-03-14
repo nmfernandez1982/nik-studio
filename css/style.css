@@ -7,6 +7,7 @@
   position: relative;
   width: 80px;
   height: 80px;
+  left: 100px;
 }
 .lds-spinner div {
   transform-origin: 40px 40px;
@@ -26,6 +27,7 @@
 .lds-spinner div:nth-child(1) {
   transform: rotate(0deg);
   animation-delay: -1.1s;
+  
 }
 .lds-spinner div:nth-child(2) {
   transform: rotate(30deg);
@@ -98,6 +100,44 @@ h1,h2,h3,h4
   color: white; 
   text-align: center;
 }
+
+.contenedorInicioResponsive 
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente las cajas */
+  align-items: center; /* Centra horizontalmente las cajas */
+  height: 300px;
+}
+
+.caja {
+  width: 300px; /* Ancho de las cajas */
+  height: 300px; /* Altura de las cajas */
+  margin: 10px auto; /* Margen entre las cajas */
+
+}
+
+.caja  h1 {   
+  color: white; /* Cambia el color del texto si es necesario */
+  text-align: center; /* Centra el texto horizontalmente */
+  font-size: 40px;
+}
+
+
+.caja span
+{
+    color:#A77BAE;
+}
+
+.caja p
+{
+  color: white;
+  font-size: 20px;
+margin-left: 30px;
+}
+
+
+
 
 #imageResponsive
 {
@@ -271,6 +311,32 @@ footer
   color: white;
 }
 
+.caja {
+  width: 300px; /* Ancho de las cajas */
+  height: 300px; /* Altura de las cajas */
+  margin: 10px auto; /* Margen entre las cajas */
+  
+}
+
+.caja  h1 {   
+  color: white; /* Cambia el color del texto si es necesario */
+  text-align: center; /* Centra el texto horizontalmente */
+  font-size: 60px;
+  padding-top: 60px;
+}
+
+
+.caja span
+{
+    color:#A77BAE;
+}
+
+.caja p
+{
+  color: white;
+  font-size: 20px;
+}
+
 
 }
 
@@ -329,6 +395,7 @@ footer
   justify-content: center;
   align-items: center;
   color: white;
+  font-size: 40px;
 }
 
 
