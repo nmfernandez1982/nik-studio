@@ -1,0 +1,132 @@
+
+:root{
+    font-size: 20px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;  
+    font-style: normal;
+}
+
+.logo{       
+    font-size: 1.2em;
+  }
+  
+  
+  .logo span
+  {
+      color:#A77BAE;
+      font-weight: 700;
+  }
+  body 
+  {
+    background-color: #f0f8ff; 
+  }
+
+  h1{
+    font-weight: bold;
+  }
+
+  h5{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+
+  }
+
+  .contacto
+  {
+    background-color: #A77BAE; 
+    color:white;
+    padding: 30px;
+    border-radius: 5px;
+  }
+
+
+
+
+        .navbar {
+            background-color: #ffffff; /* Blanco */
+        }
+        .navbar-brand, .nav-link {
+            color: #808080; /* Gris suave */
+        }
+        .hero {
+            background-image: linear-gradient(rgba(167, 123, 174, 0.8), rgba(167, 123, 174, 0.8)), url('../img/imagen1.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+        .section-title {
+            color: #808080; 
+            font-family: "Nunito", sans-serif;
+            
+        }
+        .card {
+            border: none;
+            background-color: #A77BAE; 
+            color:white;
+        }
+       
+
+
+/*animacion de los logos*/
+
+.technologies {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+
+
+.icons-wrapper {
+    overflow: hidden;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.icons {
+    display: flex;
+    animation: moveIcons 20s linear infinite;
+    white-space: nowrap;
+}
+
+.icons i {
+    font-size: 3rem;
+    color: #666;
+    padding: 0 20px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.icons i:hover {
+    color: #A77BAE;
+    transform: scale(1.2);
+}
+
+@keyframes moveIcons {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+#footer {
+    background-color: #A77BAE;
+    color: white;
+}
+
+
+
+footer .social-icons a {
+    font-size: 1.5rem;
+    transition: color 0.3s;
+    
+}
+
+footer .social-icons a:hover {
+    color: #007bff;
+}
