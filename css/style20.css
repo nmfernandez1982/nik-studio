@@ -130,3 +130,87 @@ footer .social-icons a {
 footer .social-icons a:hover {
     color: #007bff;
 }
+
+/*cursos*/
+#nuestrosCursos .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1300px;
+  }
+
+    /* Estilo de cada rectángulo */
+    .rectangle {
+        display: flex;
+        width: 300px;
+        height: 150px;
+        border: 2px solid white;
+        border-radius: 10px;
+        
+      }
+
+      /* Mitades del rectángulo */
+  .half {
+    flex: 1;
+    border-left: 2px solid white;
+    
+
+  }
+  
+  /* Mitad izquierda completa */
+  .left {
+    background-color: #A77BAE;
+    color: white;
+    text-align: center;
+    display: flex; /* Habilitar Flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+   
+    display: flex; /* Activar Flexbox */
+    flex-direction: column; /* Colocar los elementos en columna */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    gap: 10px; /* Espacio entre el ícono y el botón */
+  }
+
+  .left i.fab {
+    font-size: 40px; /* Tamaño del ícono */
+    font-size: 4rem;
+}
+
+#nuestrosCursos .btn {
+    padding: 5px 15px;
+    font-size: 14px;
+}
+  
+  /* Mitad derecha dividida en dos partes horizontales */
+  .right {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Parte superior e inferior de la mitad derecha */
+  .top, .bottom 
+  {
+    flex: 1;
+    color:white;
+    text-align: center;
+    display: flex; /* Habilitar Flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .top {
+    background-color: #A77BAE;
+    border-bottom: 2px solid white;
+  }
+  
+  .bottom {
+    background-color: #A77BAE;
+  }
+  
+ 
+
+/*fin cursos*/
