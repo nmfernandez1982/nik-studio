@@ -13,7 +13,35 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <style>
+        .card {
+          position: relative;
+          width: 18rem;
+        }
+        
+        .card-img-container {
+          position: relative;
+        }
+    
+        .card-img-top {
+          height: 200px; /* Ajusta la altura según lo que necesites */
+          object-fit: cover; /* Recorta la imagen sin distorsionarla */
+          width: 100%; /* Asegura que ocupe el ancho del contenedor */
+        }
+    
+        .card-img-container h5 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          background: rgba(0, 0, 0, 0.5);
+          padding: 10px;
+          border-radius: 5px;
+          width: 80%;
+          text-align: center;
+        }
+      </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -30,6 +58,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tecnologias">Tecnologías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto">Contacto</a>
@@ -116,7 +150,125 @@
                 </div>
             </div>
         </section>
-    </section>   
+    </section> 
+    
+    <section class="py-5" id="productos">       
+        <section class="products">
+            <h2 class="section-title text-center">Nuestro Productos</h2>
+            <div class="container mt-5">
+                <!-- Contenedor de Tarjetas -->
+                <div class="d-flex justify-content-center flex-wrap">
+                  
+                  <!-- Tarjeta 1 -->
+                  <div class="card mx-3">
+                    <div class="card-img-container">
+                      <img src="img/powergym.jpeg" class="card-img-top img-fluid" alt="Producto 1">
+                      <h5>PowerGym</h5>
+                    </div>
+                    <div class="card-body text-center">
+                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal1">Ver Descripción</button>
+                    </div>
+                  </div>
+            
+                  <!-- Tarjeta 2 -->
+                  <div class="card mx-3">
+                    <div class="card-img-container">
+                      <img src="img/liberia.jpg" class="card-img-top img-fluid" alt="Producto 2">
+                      <h5>Pampero</h5>
+                    </div>
+                    <div class="card-body text-center">
+                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal2">Ver Descripción</button>
+                    </div>
+                  </div>
+            
+                  <!-- Tarjeta 3 -->
+                  <div class="card mx-3">
+                    <div class="card-img-container">
+                      <img src="img/pdv.jpg" class="card-img-top img-fluid" alt="Producto 3">
+                      <h5>Punto de Venta</h5>
+                    </div>
+                    <div class="card-body text-center">
+                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal3">Ver Descripción</button>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            
+              <!-- Modales -->
+              <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal1Label">PowerGym</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        Optimiza la administración de tu gimnasio con nuestra plataforma integral. Gestiona fácilmente los pagos de cuotas, controla la asistencia de los socios y crea rutinas personalizadas. Además, tus clientes pueden descargar nuestra app para acceder a sus entrenamientos desde cualquier lugar.
+                        <br><br>🚀 Todo en un solo lugar:<br><br>
+                          ✅ Administración de socios y pagos. <br>
+                          ✅ Creación y asignación de rutinas. <br>
+                          ✅ App para que los socios sigan su entrenamiento. <br><br>
+                          Haz que la gestión de tu gimnasio sea más eficiente y enfocada en el crecimiento. ¡Moderniza tu negocio hoy mismo!
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal2Label">Pampero</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        Gestiona tu librería de manera fácil y eficiente con nuestra plataforma. Administra todos los detalles de tus libros, desde autores y editoriales hasta el stock disponible. Además, ofrece a tus clientes una experiencia de compra ágil con un carrito integrado y pagos seguros a través de Mercado Pago.
+                        <br><br>🚀 Todo en un solo lugar:<br><br>
+                        ✅ Administración de libros, autores y editoriales.<br>
+                        ✅ Control preciso de stock.<br>
+                        ✅ Carrito de compras online con Mercado Pago.<br><br>
+                        Lleva tu librería al siguiente nivel y vende sin límites. ¡Empieza hoy mismo!
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal3Label">Punto de Venta</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        Gestiona tu tienda de manera eficiente con nuestra plataforma de punto de venta. Administra fácilmente productos, stock, proveedores y ventas, todo en un solo lugar. Además, expande tu negocio con un carrito de compras online para vender por internet de forma rápida y segura.
+                        <br><br>🚀 Todo lo que necesitas en una sola herramienta:<br><br>
+                        ✅ Administración de productos, stock y proveedores.<br>
+                        ✅ Registro y control de ventas.<br>
+                        ✅ Carrito de compras online para vender sin límites.<br><br>
+                        Optimiza tu negocio y lleva tus ventas al siguiente nivel. ¡Empieza hoy mismo!
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+    </section>    
 
 
     <section class="py-5" id="nuestrosCursos">
@@ -430,5 +582,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
