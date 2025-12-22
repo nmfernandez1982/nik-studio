@@ -15,7 +15,7 @@ $email = $_POST["email"];
 $mensaje = $_POST["mensaje"];
 
 // Datos de la cuenta de correo utilizada para enviar vía SMTP
-$smtpHost = "c1912102.ferozo.com";  // Dominio alternativo brindado en el email de alta 
+$smtpHost = "c2701652.ferozo.com";  // Dominio alternativo brindado en el email de alta 
 $smtpUsuario = "comercial@nik-studio.com.ar";  // Mi cuenta de correo
 $smtpClave = "XeBh7l*0";  // Mi contraseña
 
