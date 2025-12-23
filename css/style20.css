@@ -1,216 +1,359 @@
+/* ===============================
+   VARIABLES DE COLOR (PALETA)
+================================ */
+:root {
+  --color-primary: #1E3A8A;
+  --color-primary-light: #2563EB;
+  --color-primary-dark: #0B1F5C;
 
-:root{
-    font-size: 20px;
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;  
-    font-style: normal;
+  --color-accent: #38BDF8;
+  --color-success: #16A34A;
+
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+  --color-text-invert: #FFFFFF;
 }
 
-.logo{       
-    font-size: 1.2em;
-  }
-  
-  
-  .logo span
-  {
-      color:#A77BAE;
-      font-weight: 700;
-  }
-  body 
-  {
-    background-color: #f0f8ff; 
-  }
+/* ===============================
+   BASE GENERAL
+================================ */
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+}
 
-  h1{
-    font-weight: bold;
-  }
+.section-title {
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 30px;
+}
 
-  h5{
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+  background-color: var(--color-primary);
+}
 
-  }
+.navbar-brand {
+  color: var(--color-text-invert);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
 
-  .contacto
-  {
-    background-color: #A77BAE; 
-    color:white;
-    padding: 30px;
-    border-radius: 5px;
-  }
+.navbar-brand span {
+  color: var(--color-accent);
+}
 
+.nav-link {
+  color: var(--color-text-invert);
+  font-weight: 600;
+  margin-left: 15px;
+}
 
+.nav-link:hover {
+  color: var(--color-accent);
+}
 
+/* ===============================
+   HERO
+================================ */
+.hero {
+  padding: 100px 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  color: var(--color-text-invert);
+}
 
-        .navbar {
-            background-color: #ffffff; /* Blanco */
-        }
-        .navbar-brand, .nav-link {
-            color: #808080; /* Gris suave */
-        }
-        .hero {
-            background-image: linear-gradient(rgba(167, 123, 174, 0.8), rgba(167, 123, 174, 0.8)), url('../img/imagen1.jpeg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-        }
-        .section-title {
-            color: #808080; 
-            font-family: "Nunito", sans-serif;
-            
-        }
-        .card {
-            border: none;
-            background-color: #A77BAE; 
-            color:white;
-        }
-       
+.hero h1 {
+  font-weight: 900;
+}
 
+/* ===============================
+   SERVICIOS
+================================ */
+.bg-servicios {
+  background-color: var(--color-primary-dark);
+}
 
-/*animacion de los logos*/
+.bg-servicios .section-title {
+  color: var(--color-text-invert);
+}
 
+.bg-servicios .card {
+  background-color: var(--color-surface);
+  color: var(--color-text-main);
+  border-radius: 14px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.bg-servicios .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.bg-servicios h5 {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+/* ===============================
+   TECNOLOGÍAS
+================================ */
 .technologies {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #f9f9f9;
+  overflow: hidden;
 }
-
-
 
 .icons-wrapper {
-    overflow: hidden;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    margin: auto;
+  width: 100%;
+  overflow: hidden;
 }
 
 .icons {
-    display: flex;
-    animation: moveIcons 20s linear infinite;
-    white-space: nowrap;
+  display: flex;
+  width: max-content;
+  animation: scrollIcons 30s linear infinite;
 }
 
 .icons i {
-    font-size: 3rem;
-    color: #666;
-    padding: 0 20px;
-    transition: transform 0.3s, color 0.3s;
+  font-size: 3rem;
+  color: var(--color-primary-light);
+  margin: 0 30px;
 }
 
 .icons i:hover {
-    color: #A77BAE;
-    transform: scale(1.2);
+  color: var(--color-accent);
 }
 
-@keyframes moveIcons {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-
-
-#footer {
-    background-color: #A77BAE;
-    color: white;
-}
-
-
-
-footer .social-icons a {
-    font-size: 1.5rem;
-    transition: color 0.3s;
-    
-}
-
-footer .social-icons a:hover {
-    color: #007bff;
-}
-
-/*cursos*/
-#nuestrosCursos .container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    max-width: 1300px;
+@keyframes scrollIcons {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
-    /* Estilo de cada rectángulo */
-    .rectangle {
-        display: flex;
-        width: 300px;
-        height: 150px;
-        border: 2px solid white;
-        border-radius: 10px;
+/* ===============================
+   CARDS PRODUCTOS
+================================ */
+.card {
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.card h5 {
+  font-weight: 800;
+}
+
+.card-img-container h5 {
+  background: rgba(30, 58, 138, 0.75);
+}
+
+/* ===============================
+   BOTONES (BOOTSTRAP OVERRIDE)
+================================ */
+.btn-primary {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn-secondary {
+  background-color: var(--color-text-muted);
+  border-color: var(--color-text-muted);
+}
+
+/* ===============================
+   CURSOS
+================================ */
+.rectangle {
+  background-color: var(--color-surface);
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rectangle i {
+  color: var(--color-primary-light);
+}
+
+.rectangle .half {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rectangle .right .top,
+.rectangle .right .bottom {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+/* ===============================
+   CONTACTO
+================================ */
+#contacto {
+  background-color: var(--color-primary);
+  color: var(--color-text-invert);
+}
+
+#contacto label {
+  font-weight: 600;
+}
+
+#contacto .form-control {
+  border-radius: 8px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-invert);
+}
+
+footer h5 {
+  font-weight: 800;
+}
+
+footer a {
+  color: var(--color-text-invert);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--color-accent);
+}
+
+/* ===============================
+   MODALES
+================================ */
+.modal-content {
+  border-radius: 14px;
+}
+
+
+
+.card {
+          position: relative;
+          width: 18rem;
+        }
         
-      }
-
-      /* Mitades del rectángulo */
-  .half {
-    flex: 1;
-    border-left: 2px solid white;
+        .card-img-container {
+          position: relative;
+        }
     
+        .card-img-top {
+          height: 200px; /* Ajusta la altura según lo que necesites */
+          object-fit: cover; /* Recorta la imagen sin distorsionarla */
+          width: 100%; /* Asegura que ocupe el ancho del contenedor */
+        }
+    
+        .card-img-container h5 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          background: rgba(0, 0, 0, 0.5);
+          padding: 10px;
+          border-radius: 5px;
+          width: 80%;
+          text-align: center;
+        }
 
-  }
-  
-  /* Mitad izquierda completa */
-  .left {
-    background-color: #A77BAE;
-    color: white;
-    text-align: center;
-    display: flex; /* Habilitar Flexbox */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-   
-    display: flex; /* Activar Flexbox */
-    flex-direction: column; /* Colocar los elementos en columna */
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    gap: 10px; /* Espacio entre el ícono y el botón */
-  }
 
-  .left i.fab {
-    font-size: 40px; /* Tamaño del ícono */
-    font-size: 4rem;
+
+        .products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
-#nuestrosCursos .btn {
-    padding: 5px 15px;
-    font-size: 14px;
+/* Tablet */
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-  
-  /* Mitad derecha dividida en dos partes horizontales */
-  .right {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Parte superior e inferior de la mitad derecha */
-  .top, .bottom 
-  {
-    flex: 1;
-    color:white;
-    text-align: center;
-    display: flex; /* Habilitar Flexbox */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  
-  .top {
-    background-color: #A77BAE;
-    border-bottom: 2px solid white;
-  }
-  
-  .bottom {
-    background-color: #A77BAE;
-  }
-  
- 
 
-/*fin cursos*/
+/* Mobile */
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+#nuestrosCursos .half.left i {
+  font-size: 4em;
+}
+
+#nuestrosCursos .inline-logos {
+  display: inline-flex;     /* 👈 en línea */
+  align-items: center;
+  gap: 10px;
+}
+
+#nuestrosCursos .inline-logos i {
+  font-size: 4em;
+}
+
+#nuestrosCursos .inline-logos .plus {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+
+/* ===============================
+   LOGO + TEXTO TECNOLOGÍA
+================================ */
+
+#nuestrosCursos .half.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tech-item i {
+  font-size: 4em;
+}
+
+.tech-item span {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* Caso HTML + CSS */
+.tech-item .plus {
+  font-size: 1.5em;
+  font-weight: bold;
+}

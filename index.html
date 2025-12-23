@@ -12,36 +12,7 @@
     <link href="css/style20.css" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .card {
-          position: relative;
-          width: 18rem;
-        }
-        
-        .card-img-container {
-          position: relative;
-        }
-    
-        .card-img-top {
-          height: 200px; /* Ajusta la altura según lo que necesites */
-          object-fit: cover; /* Recorta la imagen sin distorsionarla */
-          width: 100%; /* Asegura que ocupe el ancho del contenedor */
-        }
-    
-        .card-img-container h5 {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: white;
-          background: rgba(0, 0, 0, 0.5);
-          padding: 10px;
-          border-radius: 5px;
-          width: 80%;
-          text-align: center;
-        }
-      </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 </head>
 <body>
     <!-- Navbar -->
@@ -81,7 +52,7 @@
 
     
 
-    <section class="py-5" id="servicios">
+<section class="py-5 bg-servicios text-white" id="servicios">
         <div class="container">
             <h2 class="section-title text-center">Nuestros Servicios</h2>
             <div class="row mt-4">
@@ -153,367 +124,294 @@
     </section> 
     
     <section class="py-5" id="productos">       
-        <section class="products">
-            <h2 class="section-title text-center">Nuestro Productos</h2>
-            <div class="container mt-5">
-                <!-- Contenedor de Tarjetas -->
-                <div class="d-flex justify-content-center flex-wrap">
-                  
-                  <!-- Tarjeta 1 -->
-                  <div class="card mx-3">
-                    <div class="card-img-container">
-                      <img src="img/powergym.jpeg" class="card-img-top img-fluid" alt="Producto 1">
-                      <h5>PowerGym</h5>
-                    </div>
-                    <div class="card-body text-center">
-                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal1">Ver Descripción</button>
-                    </div>
-                  </div>
-            
-                  <!-- Tarjeta 2 -->
-                  <div class="card mx-3">
-                    <div class="card-img-container">
-                      <img src="img/liberia.jpg" class="card-img-top img-fluid" alt="Producto 2">
-                      <h5>Pampero</h5>
-                    </div>
-                    <div class="card-body text-center">
-                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal2">Ver Descripción</button>
-                    </div>
-                  </div>
-            
-                  <!-- Tarjeta 3 -->
-                  <div class="card mx-3">
-                    <div class="card-img-container">
-                      <img src="img/pdv.jpg" class="card-img-top img-fluid" alt="Producto 3">
-                      <h5>Punto de Venta</h5>
-                    </div>
-                    <div class="card-body text-center">
-                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal3">Ver Descripción</button>
-                    </div>
-                  </div>
-            
-                </div>
-              </div>
-            
-              <!-- Modales -->
-              <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modal1Label">PowerGym</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                        Optimiza la administración de tu gimnasio con nuestra plataforma integral. Gestiona fácilmente los pagos de cuotas, controla la asistencia de los socios y crea rutinas personalizadas. Además, tus clientes pueden descargar nuestra app para acceder a sus entrenamientos desde cualquier lugar.
-                        <br><br>🚀 Todo en un solo lugar:<br><br>
-                          ✅ Administración de socios y pagos. <br>
-                          ✅ Creación y asignación de rutinas. <br>
-                          ✅ App para que los socios sigan su entrenamiento. <br><br>
-                          Haz que la gestión de tu gimnasio sea más eficiente y enfocada en el crecimiento. ¡Moderniza tu negocio hoy mismo!
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modal2Label">Pampero</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                        Gestiona tu librería de manera fácil y eficiente con nuestra plataforma. Administra todos los detalles de tus libros, desde autores y editoriales hasta el stock disponible. Además, ofrece a tus clientes una experiencia de compra ágil con un carrito integrado y pagos seguros a través de Mercado Pago.
-                        <br><br>🚀 Todo en un solo lugar:<br><br>
-                        ✅ Administración de libros, autores y editoriales.<br>
-                        ✅ Control preciso de stock.<br>
-                        ✅ Carrito de compras online con Mercado Pago.<br><br>
-                        Lleva tu librería al siguiente nivel y vende sin límites. ¡Empieza hoy mismo!
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3Label" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modal3Label">Punto de Venta</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                        Gestiona tu tienda de manera eficiente con nuestra plataforma de punto de venta. Administra fácilmente productos, stock, proveedores y ventas, todo en un solo lugar. Además, expande tu negocio con un carrito de compras online para vender por internet de forma rápida y segura.
-                        <br><br>🚀 Todo lo que necesitas en una sola herramienta:<br><br>
-                        ✅ Administración de productos, stock y proveedores.<br>
-                        ✅ Registro y control de ventas.<br>
-                        ✅ Carrito de compras online para vender sin límites.<br><br>
-                        Optimiza tu negocio y lleva tus ventas al siguiente nivel. ¡Empieza hoy mismo!
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </section>
-    </section>    
+  <section class="products">
+    <h2 class="section-title text-center">Nuestros Productos</h2>
+
+    <div class="container mt-5">
+      <!-- CONTENEDOR DE TARJETAS -->
+      <div class="products-grid">
+
+        <!-- Tarjeta 1 -->
+        <div class="card">
+          <div class="card-img-container">
+            <img src="img/powergym.jpeg" class="card-img-top img-fluid" alt="Producto 1">
+            <h5>PowerGym</h5>
+          </div>
+          <div class="card-body text-center">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal1">
+              Ver Descripción
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="card">
+          <div class="card-img-container">
+            <img src="img/liberia.jpg" class="card-img-top img-fluid" alt="Producto 2">
+            <h5>Pampero</h5>
+          </div>
+          <div class="card-body text-center">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal2">
+              Ver Descripción
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="card">
+          <div class="card-img-container">
+            <img src="img/pdv.jpg" class="card-img-top img-fluid" alt="Producto 3">
+            <h5>Punto de Venta</h5>
+          </div>
+          <div class="card-body text-center">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal3">
+              Ver Descripción
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="card">
+          <div class="card-img-container">
+            <img src="img/pdv.jpg" class="card-img-top img-fluid" alt="Producto 4">
+            <h5>Punto de Venta</h5>
+          </div>
+          <div class="card-body text-center">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal3">
+              Ver Descripción
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= MODALES ================= -->
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">PowerGym</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Optimiza la administración de tu gimnasio con nuestra plataforma integral...
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Pampero</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Gestiona tu librería de manera fácil y eficiente...
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="modal3" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Punto de Venta</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Gestiona tu tienda de manera eficiente con nuestra plataforma...
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section>
+   
 
 
     <section class="py-5" id="nuestrosCursos">
-        <h2 class="section-title text-center">Nuestros Cursos</h2>
-        <br>
-      <div class="container">             
-                <div class="rectangle">
-                    <div class="half left" style="display: inline">
-                            <i class="fab fa-html5" style="font-size: 3em;  margin-top: 15px" ></i>
-                            <span style="font-size: 24px; font-weight: bold; ">+</span>
-                             <i class="fa-brands fa-css3-alt" style="font-size: 3em;"></i>                                 
-                              <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 100px;margin-top: 20px;">
-                            Temario
-                        </button>
+  <h2 class="section-title text-center">Nuestros Cursos</h2>
+  <br>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">HTML 5 + CSS 3</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body" style="color: black; text-align: left; font-size:14px;">
-                                    HTML (HyperText Markup Language) y CSS (Cascading Style Sheets) son la base de la construcción de sitios web. Mientras que HTML proporciona la estructura y el contenido de las páginas web, CSS se encarga de su diseño visual y presentación. Con estos dos lenguajes, puedes crear desde simples páginas web estáticas hasta interfaces modernas y responsivas.
-                                    En esta clase, aprenderemos cómo funcionan juntos HTML y CSS para desarrollar sitios web que sean atractivos, funcionales y adaptados a diferentes dispositivos.
-                                    <br>
-                                    <ol>
-                                        <li>Introducción a HTML</li>
-                                        <ul>
-                                            <li>¿Qué es HTML y para qué se utiliza?</li>
-                                            <li>Estructura básica de un documento HTML</li>
-                                            <li>Etiquetas esenciales</li>
-                                            <li>Listas</li>
-                                            <li>Tablas - Formularios </li>
-                                        </ul>
-                                        <li>Introducción a CSS</li>
-                                        <ul>
-                                            <li>¿Qué es CSS y cuál es su función?</li>
-                                            <li>Diferentes formas de agregar CSS</li>
-                                            <li>Selectores básicos</li>
-                                            <li>ropiedades básicas de diseño</li>
-                                        </ul>
-                                        <li>Maquetación con CSS</li>
-                                        <ul>
-                                            <li>Modelos de caja (box model)</li>
-                                            <li>Introducción a Flexbox</li>
-                                            <li>Introducción a Grid</li>
-                                            <li>Sitios Responsivos con CSS</li>
-                                        </ul>
-                                        <li>Práctica Final</li>
-                                    </ol>
+  <div class="container">
 
-                                
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
+    <!-- HTML + CSS -->
+    <div class="rectangle">
+      <div class="half left">
+        <div class="tech-item">
+          <i class="fab fa-html5"></i>
+          <span class="plus">+</span>
+          <i class="fa-brands fa-css3-alt"></i>
+          <span>HTML + CSS</span>
+        </div>
+      </div>
 
+      <div class="half right">
+        <div class="top">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div style="padding-left: 10px">12 Clases</div>
+        </div>
+        <div class="bottom">
+          <i class="fa-regular fa-clock"></i>
+          <div style="padding-left: 10px">2 horas</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- PHP -->
+    <div class="rectangle">
+      <div class="half left">
+        <div class="tech-item">
+          <i class="fab fa-php"></i>
+          <span>PHP</span>
+        </div>
+      </div>
 
-                    </div>
-                    <div class="half right">                        
-                        <div class="top">
-                            <i class="fa-solid fa-chalkboard-user"></i>
-                            <div style="padding-left: 10px">12 Clases</div>                                 
-                        </div>
-                    <div class="bottom">
-                        <i class="fa-regular fa-clock"></i>
-                         <div style="padding-left: 10px">2 horas</div> 
-                    </div>
-                    </div>
-                </div>
-                
-                <div class="rectangle">
-                    <div class="half left">
-                        <i class="fab fa-php"></i>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="width: 100px;">
-                            Temario
-                        </button>
+      <div class="half right">
+        <div class="top">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div style="padding-left: 10px">10 Clases</div>
+        </div>
+        <div class="bottom">
+          <i class="fa-regular fa-clock"></i>
+          <div style="padding-left: 10px">2 horas</div>
+        </div>
+      </div>
+    </div>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">HTML 5 + CSS 3</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body" style="color: black; text-align: left; font-size:14px;">
-                                    PHP (Hypertext Preprocessor) es un lenguaje de programación del lado del servidor diseñado para el desarrollo web. Es ampliamente utilizado para crear sitios dinámicos e interactivos, permitiendo conectar aplicaciones web con bases de datos y manejar lógica compleja. Gracias a su simplicidad y flexibilidad, PHP es una de las tecnologías más populares en el desarrollo web.
-                                    En esta clase, aprenderemos los fundamentos de PHP, cómo integrarlo con HTML, y cómo usarlo para desarrollar aplicaciones web dinámicas.
-                                    <br>
-                                    <ol>
-                                        <li>Introducción a PHP</li>
-                                        <ul>
-                                            <li>¿Qué es PHP y para qué se utiliza?</li>
-                                            <li>Historia y evolución del lenguaje</li>
-                                            <li>Requisitos para usar PHP</li>
-                                            <li>Primer script en PHP</li>
-                                        </ul>
-                                        <li>Fundamentos del Lenguaje</li>
-                                        <ul>
-                                            <li>Sintaxis básica</li>
-                                            <li>Variables y tipos de datos</li>
-                                            <li>Operadores</li>
-                                        </ul>
-                                        <li>Estructuras de Control</li>
-                                        <ul>
-                                            <li>Condicionales</li>
-                                            <li>Ciclos</li>
-                                            <li>Switch-case</li>
-                                        </ul>
-                                        <li>Funciones en PHP</li>
-                                        <ul>
-                                            <li>Creación y uso de funciones</li>
-                                            <li>Funciones con parámetros y valores de retorno</li>
-                                            <li>Funciones predefinidas útiles</li>
-                                        </ul>
-                                        <li>Manejo de Formularios y Datos del Usuario</li>
-                                        <ul>
-                                            <li>Métodos HTTP: GET y POST</li>
-                                            <li>Procesamiento de formularios con PHP</li>
-                                            <li>Validación de datos del usuario</li>
-                                            <li>Prevención de ataques básicos</li>
-                                        </ul>
-                                        <li>Manejo de Archivos</li>
-                                        <li>Introducción a Bases de Datos con PHP</li>
-                                        <li>Proyecto Final</li>
-                                    </ol>
+    <!-- Base de Datos -->
+    <div class="rectangle">
+      <div class="half left">
+        <div class="tech-item">
+          <i class="fa-solid fa-database"></i>
+          <span>Base de Datos</span>
+        </div>
+      </div>
 
-                                
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        
+      <div class="half right">
+        <div class="top">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div style="padding-left: 10px">8 Clases</div>
+        </div>
+        <div class="bottom">
+          <i class="fa-regular fa-clock"></i>
+          <div style="padding-left: 10px">2 horas</div>
+        </div>
+      </div>
+    </div>
 
-                    </div>
-                    <div class="half right">                        
-                        <div class="top">
-                            <i class="fa-solid fa-chalkboard-user"></i>
-                            <div style="padding-left: 10px">10 Clases</div>                                 
-                        </div>
-                    <div class="bottom">
-                        <i class="fa-regular fa-clock"></i>
-                         <div style="padding-left: 10px">2 horas</div> 
-                    </div>
-                    </div>
-                </div>
-                
-                <div class="rectangle">
-                    <div class="half left">
-                        <i class="fa-solid fa-database" style="font-size: 3em;"></i>
-                    </div>
-                    <div class="half right">
-                    <div class="top">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                        <div style="padding-left: 10px">8 Clases</div>  
-                    </div>
-                    <div class="bottom">
-                         <i class="fa-regular fa-clock"></i>
-                         <div style="padding-left: 10px">2 horas</div> 
-                    </div>
-                    </div>
-                </div>
-                
-                <div class="rectangle">
-                    <div class="half left">
-                        <i class="fab fa-bootstrap"></i>
-                    </div>
-                    <div class="half right">
-                    <div class="top">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                        <div style="padding-left: 10px">4 Clases</div>  
-                    </div>
-                    <div class="bottom">
-                        <i class="fa-regular fa-clock"></i>
-                        <div style="padding-left: 10px">2 horas</div> 
-                    </div>
-                    </div>
-                </div>
-                
-                <div class="rectangle">
-                    <div class="half left">
-                        <i class="fab fa-laravel"></i>
-                    </div>
-                    <div class="half right">
-                    <div class="top">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                        <div style="padding-left: 10px">8 Clases</div>  
-                    </div>
-                    <div class="bottom">
-                        <i class="fa-regular fa-clock"></i>
-                        <div style="padding-left: 10px">2 horas</div> 
-                    </div>
-                    </div>
-                </div>
-                
-                <div class="rectangle">
-                    <div class="half left">
-                        <i class="fa-brands fa-java" style="font-size: 4em;"></i>
-                    </div>
-                    <div class="half right">
-                    <div class="top">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                        <div style="padding-left: 10px">10 Clases</div>  
-                    </div>
-                    <div class="bottom">
-                        <i class="fa-regular fa-clock"></i>
-                        <div style="padding-left: 10px">2 horas</div> 
-                    </div>
-                    </div>
-                </div>
+    <!-- Bootstrap -->
+    <div class="rectangle">
+      <div class="half left">
+        <div class="tech-item">
+          <i class="fab fa-bootstrap"></i>
+          <span>Bootstrap</span>
+        </div>
+      </div>
 
-                <div class="rectangle">
-                    <div class="half left">
-                        <i class="fa-brands fa-js" style="font-size: 4em;"></i>
-                    </div>
-                    <div class="half right">
-                    <div class="top">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                        <div style="padding-left: 10px">10 Clases</div>  
-                    </div>
-                    <div class="bottom">
-                        <i class="fa-regular fa-clock"></i>
-                        <div style="padding-left: 10px">2 horas</div> 
-                    </div>
-                    </div>
-                </div>
+      <div class="half right">
+        <div class="top">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div style="padding-left: 10px">4 Clases</div>
+        </div>
+        <div class="bottom">
+          <i class="fa-regular fa-clock"></i>
+          <div style="padding-left: 10px">2 horas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Laravel -->
+    <div class="rectangle">
+      <div class="half left">
+        <div class="tech-item">
+          <i class="fab fa-laravel"></i>
+          <span>Laravel</span>
+        </div>
+      </div>
+
+      <div class="half right">
+        <div class="top">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div style="padding-left: 10px">8 Clases</div>
+        </div>
+        <div class="bottom">
+          <i class="fa-regular fa-clock"></i>
+          <div style="padding-left: 10px">2 horas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Java -->
+    <div class="rectangle">
+      <div class="half left">
+        <div class="tech-item">
+          <i class="fa-brands fa-java"></i>
+          <span>Java</span>
+        </div>
+      </div>
+
+      <div class="half right">
+        <div class="top">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div style="padding-left: 10px">10 Clases</div>
+        </div>
+        <div class="bottom">
+          <i class="fa-regular fa-clock"></i>
+          <div style="padding-left: 10px">2 horas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="rectangle">
+      <div class="half left">
+        <div class="tech-item">
+          <i class="fa-brands fa-js"></i>
+          <span>JavaScript</span>
+        </div>
+      </div>
+
+      <div class="half right">
+        <div class="top">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div style="padding-left: 10px">10 Clases</div>
+        </div>
+        <div class="bottom">
+          <i class="fa-regular fa-clock"></i>
+          <div style="padding-left: 10px">2 horas</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
-
-
-                </div>
-        </div>        
-    </section>
 
 
     <section class="py-5" id="contacto">
