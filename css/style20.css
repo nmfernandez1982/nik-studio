@@ -286,13 +286,16 @@ footer a:hover {
 
 
 
-        .products-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  justify-content: center;
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 👈 centra todo */
+  gap: 24px;
 }
 
+.products-grid .card {
+  width: 260px;
+}
 /* Tablet */
 @media (max-width: 992px) {
   .products-grid {
