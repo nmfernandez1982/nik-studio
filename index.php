@@ -1,3 +1,15 @@
+<?php
+// ================= SESIÓN Y CSRF (requerido por contacto/procesar.php) =================
+session_start();
+ 
+// Generar token CSRF si no existe
+if (empty($_SESSION['form_token'])) {
+    $_SESSION['form_token'] = bin2hex(random_bytes(32));
+}
+ 
+// Marcar momento de carga (para el TimeTrap del procesar.php)
+$_SESSION['form_time'] = time();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,19 +54,18 @@
             </div>
         </div>
     </nav>
-
+ 
     <section class="hero text-center">
         <div class="container">
             <h1 class="display-4">Soluciones Tecnológicas</h1>
         </div>
     </section>
-
+ 
     <section class="py-5 bg-servicios text-white" id="servicios">
         <div class="container" style="max-width: 1100px;">
             <h2 class="section-title text-center">Nuestros Servicios</h2>
-
+ 
             <div class="row mt-4 justify-content-center">
-                
                 <div class="col-md-4 d-flex justify-content-center">
                     <div class="card p-4 text-center w-100" style="max-width: 350px;">
                         <h5>Desarrollos a Medida</h5>
@@ -66,7 +77,7 @@
                         </p>
                     </div>
                 </div>
-
+ 
                 <div class="col-md-4 d-flex justify-content-center">
                     <div class="card p-4 text-center w-100" style="max-width: 350px;">
                         <h5>Consultoría Tecnológica</h5>
@@ -76,7 +87,7 @@
                         </p>
                     </div>
                 </div>
-
+ 
                 <div class="col-md-4 d-flex justify-content-center">
                     <div class="card p-4 text-center w-100" style="max-width: 350px;">
                         <h5>Formación</h5>
@@ -87,18 +98,16 @@
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
+ 
     <section class="py-5" id="tecnologias">       
         <section class="technologies">
             <h2 class="section-title text-center">Tecnologías</h2>
             <br>
             <div class="icons-wrapper">
                 <div class="icons">
-                    <!-- Íconos duplicados para hacer un loop continuo -->
                     <i class="fab fa-java"></i>
                     <i class="fab fa-php"></i>
                     <i class="fab fa-python"></i>
@@ -115,7 +124,6 @@
                     <i class="fab fa-symfony"></i>
                     <i class="fab fa-sass"></i>
                     <i class="fab fa-docker"></i>
-                    <!-- Repetición para el loop continuo -->
                     <i class="fab fa-java"></i>
                     <i class="fab fa-php"></i>
                     <i class="fab fa-python"></i>
@@ -140,196 +148,142 @@
     <section class="py-5" id="productos">       
       <section class="products">
         <h2 class="section-title text-center">Nuestros Productos</h2>
-
+ 
         <div class="container mt-5">
-          <!-- CONTENEDOR DE TARJETAS -->
           <div class="products-grid">
-
-            <!-- Tarjeta 1 -->
+ 
             <div class="card">
               <div class="card-img-container">
                 <img src="img/powergym.jpeg" class="card-img-top img-fluid" alt="Producto 1">
                 <h5>PowerGym</h5>
               </div>
               <div class="card-body text-center">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">
-                  Ver Descripción
-                </button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">Ver Descripción</button>
               </div>
             </div>
-
-            <!-- Tarjeta 2 -->
+ 
             <div class="card">
               <div class="card-img-container">
                 <img src="img/liberia.jpg" class="card-img-top img-fluid" alt="Producto 2">
                 <h5>Pampero</h5>
               </div>
               <div class="card-body text-center">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
-                  Ver Descripción
-                </button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">Ver Descripción</button>
               </div>
             </div>
-
-            <!-- Tarjeta 3 -->
+ 
             <div class="card">
               <div class="card-img-container">
                 <img src="img/pdv.jpg" class="card-img-top img-fluid" alt="Producto 3">
                 <h5>Punto de Venta</h5>
               </div>
               <div class="card-body text-center">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
-                  Ver Descripción
-                </button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">Ver Descripción</button>
               </div>
             </div>
-
-            <!-- Tarjeta 4 -->
+ 
             <div class="card">
               <div class="card-img-container">
                 <img src="img/codigo.jpg" class="card-img-top img-fluid" alt="Producto 4">
                 <h5>Publicaciones</h5>
               </div>
               <div class="card-body text-center">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal4">
-                  Ver Descripción
-                </button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal4">Ver Descripción</button>
               </div>
             </div>
-
-            <!-- Tarjeta 5 -->
+ 
             <div class="card">
               <div class="card-img-container">
                 <img src="img/test.jpg" class="card-img-top img-fluid" alt="Producto 5">
                 <h5>TestTrack</h5>
               </div>
               <div class="card-body text-center">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal5">
-                  Ver Descripción
-                </button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal5">Ver Descripción</button>
               </div>
             </div>
-
+ 
           </div>
         </div>
-
+ 
         <!-- ================= MODALES PRODUCTOS ================= -->
-
-        <!-- Modal 1 -->
         <div class="modal fade" id="modal1" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">PowerGym</h5>          
-              </div>
+              <div class="modal-header"><h5 class="modal-title">PowerGym</h5></div>
               <div class="modal-body">
                 <p>Plataforma integral diseñada para la administración de gimnasios, que centraliza la gestión de socios, actividades y operaciones diarias. El sistema permite organizar la información de manera estructurada y mantener un control eficiente del funcionamiento del gimnasio.</p>
-
                 <p>Complementariamente, incluye una aplicación móvil orientada a los usuarios, que facilita el acceso a información relevante desde el celular, mejorando la comunicación y la experiencia del socio.</p>
-
                 <p>Esta solución optimiza los procesos administrativos, fortalece la relación con los usuarios y aporta una experiencia moderna e integrada entre la gestión interna y el uso móvil.</p>
               </div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              </div>
+              <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></div>
             </div>
           </div>
         </div>
-
-        <!-- Modal 2 -->
+ 
         <div class="modal fade" id="modal2" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Pampero</h5>          
-              </div>
+              <div class="modal-header"><h5 class="modal-title">Pampero</h5></div>
               <div class="modal-body">
                 <p>Plataforma orientada a la venta de libros, diseñada para administrar el catálogo editorial y registrar las operaciones de venta de manera organizada y eficiente. Permite gestionar información detallada de cada libro, como autores, editoriales, formatos y precios.</p>
-
                 <p>El sistema centraliza el control de ventas y productos, facilitando el seguimiento del stock y el análisis del movimiento comercial.</p>
-
                 <p>Esta solución aporta orden, trazabilidad y control en la gestión de librerías, optimizando los procesos de venta y la administración del inventario.</p>
               </div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              </div>
+              <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></div>
             </div>
           </div>
         </div>
-
-        <!-- Modal 3 -->
+ 
         <div class="modal fade" id="modal3" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Punto de Venta</h5>      
-              </div>
+              <div class="modal-header"><h5 class="modal-title">Punto de Venta</h5></div>
               <div class="modal-body">
                 <p>Aplicación orientada a la gestión de ventas de productos, diseñada para registrar operaciones de manera ágil y organizada. Permite administrar productos, controlar precios y procesar ventas en tiempo real.</p>
-
                 <p>El sistema centraliza la información comercial, facilitando el seguimiento de las transacciones y brindando una visión clara del movimiento de productos.</p>
-
                 <p>Esta solución contribuye a optimizar los procesos de venta, mejorar el control operativo y reducir errores en la gestión diaria del negocio.</p>
               </div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              </div>
+              <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></div>
             </div>
           </div>
         </div>
-
-        <!-- Modal 4 -->
+ 
         <div class="modal fade" id="modal4" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Publicaciones</h5>        
-              </div>
+              <div class="modal-header"><h5 class="modal-title">Publicaciones</h5></div>
               <div class="modal-body">
                 <p>Plataforma diseñada para centralizar y administrar toda la información relacionada con los sistemas de una empresa. Permite registrar datos clave de cada sistema y realizar un seguimiento detallado de las publicaciones y actualizaciones asociadas.</p>
-
                 <p>El sistema ofrece trazabilidad histórica de los cambios, facilitando el control de versiones, la auditoría y la comprensión de la evolución de cada sistema a lo largo del tiempo.</p>
-
                 <p>Esta solución mejora la organización de la información, optimiza la comunicación entre equipos y aporta mayor control y transparencia sobre el ecosistema tecnológico de la organización.</p>
               </div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              </div>
+              <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></div>
             </div>
           </div>
         </div>
-
-        <!-- Modal 5 -->
+ 
         <div class="modal fade" id="modal5" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">TestTrack</h5>        
-              </div>
+              <div class="modal-header"><h5 class="modal-title">TestTrack</h5></div>
               <div class="modal-body">
                 <p>Plataforma diseñada para la gestión y seguimiento de pruebas funcionales dentro del proceso de desarrollo de software. El sistema permite registrar, organizar y asignar distintos casos de prueba que los usuarios deben ejecutar para validar el correcto funcionamiento de las aplicaciones.</p>
-
                 <p>La herramienta facilita el control del estado de cada prueba, permitiendo visualizar cuáles han sido aprobadas, rechazadas o se encuentran pendientes, brindando así un seguimiento claro del avance del proceso de validación.</p>
-
                 <p>Esta solución contribuye a mejorar la calidad del software, optimizar la comunicación entre los equipos de desarrollo y testing, y garantizar que cada funcionalidad sea evaluada antes de su implementación final.</p>
               </div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              </div>
+              <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></div>
             </div>
           </div>
         </div>
-
+ 
       </section>
     </section>
-
+ 
     <section class="py-5" id="nuestrosCursos">
       <h2 class="section-title text-center">Nuestros Cursos</h2>
       <br>
-
       <div class="container">
-
-        <!-- HTML + CSS -->
+ 
         <div class="rectangle">
           <div class="half left">
             <div class="tech-item">
@@ -339,153 +293,77 @@
               <span>HTML + CSS</span>
             </div>
           </div>
-
           <div class="half right">
-            <div class="top">
-              <i class="fa-solid fa-chalkboard-user"></i>
-              <div style="padding-left: 10px">12 Clases</div>
-            </div>
-            <div class="bottom">
-              <i class="fa-regular fa-clock"></i>
-              <div style="padding-left: 10px">2 horas</div>
-            </div>
+            <div class="top"><i class="fa-solid fa-chalkboard-user"></i><div style="padding-left: 10px">12 Clases</div></div>
+            <div class="bottom"><i class="fa-regular fa-clock"></i><div style="padding-left: 10px">2 horas</div></div>
           </div>
         </div>
-
-        <!-- PHP -->
+ 
         <div class="rectangle">
-          <div class="half left">
-            <div class="tech-item">
-              <i class="fab fa-php"></i>
-              <span>PHP</span>
-            </div>
-          </div>
-
+          <div class="half left"><div class="tech-item"><i class="fab fa-php"></i><span>PHP</span></div></div>
           <div class="half right">
-            <div class="top">
-              <i class="fa-solid fa-chalkboard-user"></i>
-              <div style="padding-left: 10px">10 Clases</div>
-            </div>
-            <div class="bottom">
-              <i class="fa-regular fa-clock"></i>
-              <div style="padding-left: 10px">2 horas</div>
-            </div>
+            <div class="top"><i class="fa-solid fa-chalkboard-user"></i><div style="padding-left: 10px">10 Clases</div></div>
+            <div class="bottom"><i class="fa-regular fa-clock"></i><div style="padding-left: 10px">2 horas</div></div>
           </div>
         </div>
-
-        <!-- Base de Datos -->
+ 
         <div class="rectangle">
-          <div class="half left">
-            <div class="tech-item">
-              <i class="fa-solid fa-database"></i>
-              <span>Base de Datos</span>
-            </div>
-          </div>
-
+          <div class="half left"><div class="tech-item"><i class="fa-solid fa-database"></i><span>Base de Datos</span></div></div>
           <div class="half right">
-            <div class="top">
-              <i class="fa-solid fa-chalkboard-user"></i>
-              <div style="padding-left: 10px">8 Clases</div>
-            </div>
-            <div class="bottom">
-              <i class="fa-regular fa-clock"></i>
-              <div style="padding-left: 10px">2 horas</div>
-            </div>
+            <div class="top"><i class="fa-solid fa-chalkboard-user"></i><div style="padding-left: 10px">8 Clases</div></div>
+            <div class="bottom"><i class="fa-regular fa-clock"></i><div style="padding-left: 10px">2 horas</div></div>
           </div>
         </div>
-
-        <!-- Bootstrap -->
+ 
         <div class="rectangle">
-          <div class="half left">
-            <div class="tech-item">
-              <i class="fab fa-bootstrap"></i>
-              <span>Bootstrap</span>
-            </div>
-          </div>
-
+          <div class="half left"><div class="tech-item"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div></div>
           <div class="half right">
-            <div class="top">
-              <i class="fa-solid fa-chalkboard-user"></i>
-              <div style="padding-left: 10px">4 Clases</div>
-            </div>
-            <div class="bottom">
-              <i class="fa-regular fa-clock"></i>
-              <div style="padding-left: 10px">2 horas</div>
-            </div>
+            <div class="top"><i class="fa-solid fa-chalkboard-user"></i><div style="padding-left: 10px">4 Clases</div></div>
+            <div class="bottom"><i class="fa-regular fa-clock"></i><div style="padding-left: 10px">2 horas</div></div>
           </div>
         </div>
-
-        <!-- Laravel -->
+ 
         <div class="rectangle">
-          <div class="half left">
-            <div class="tech-item">
-              <i class="fab fa-laravel"></i>
-              <span>Laravel</span>
-            </div>
-          </div>
-
+          <div class="half left"><div class="tech-item"><i class="fab fa-laravel"></i><span>Laravel</span></div></div>
           <div class="half right">
-            <div class="top">
-              <i class="fa-solid fa-chalkboard-user"></i>
-              <div style="padding-left: 10px">8 Clases</div>
-            </div>
-            <div class="bottom">
-              <i class="fa-regular fa-clock"></i>
-              <div style="padding-left: 10px">2 horas</div>
-            </div>
+            <div class="top"><i class="fa-solid fa-chalkboard-user"></i><div style="padding-left: 10px">8 Clases</div></div>
+            <div class="bottom"><i class="fa-regular fa-clock"></i><div style="padding-left: 10px">2 horas</div></div>
           </div>
         </div>
-
-        <!-- Java -->
+ 
         <div class="rectangle">
-          <div class="half left">
-            <div class="tech-item">
-              <i class="fa-brands fa-java"></i>
-              <span>Java</span>
-            </div>
-          </div>
-
+          <div class="half left"><div class="tech-item"><i class="fa-brands fa-java"></i><span>Java</span></div></div>
           <div class="half right">
-            <div class="top">
-              <i class="fa-solid fa-chalkboard-user"></i>
-              <div style="padding-left: 10px">10 Clases</div>
-            </div>
-            <div class="bottom">
-              <i class="fa-regular fa-clock"></i>
-              <div style="padding-left: 10px">2 horas</div>
-            </div>
+            <div class="top"><i class="fa-solid fa-chalkboard-user"></i><div style="padding-left: 10px">10 Clases</div></div>
+            <div class="bottom"><i class="fa-regular fa-clock"></i><div style="padding-left: 10px">2 horas</div></div>
           </div>
         </div>
-
-        <!-- JavaScript -->
+ 
         <div class="rectangle">
-          <div class="half left">
-            <div class="tech-item">
-              <i class="fa-brands fa-js"></i>
-              <span>JavaScript</span>
-            </div>
-          </div>
-
+          <div class="half left"><div class="tech-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div></div>
           <div class="half right">
-            <div class="top">
-              <i class="fa-solid fa-chalkboard-user"></i>
-              <div style="padding-left: 10px">10 Clases</div>
-            </div>
-            <div class="bottom">
-              <i class="fa-regular fa-clock"></i>
-              <div style="padding-left: 10px">2 horas</div>
-            </div>
+            <div class="top"><i class="fa-solid fa-chalkboard-user"></i><div style="padding-left: 10px">10 Clases</div></div>
+            <div class="bottom"><i class="fa-regular fa-clock"></i><div style="padding-left: 10px">2 horas</div></div>
           </div>
         </div>
-
+ 
       </div>
     </section>
-
+ 
     <section class="py-5" id="contacto">
         <div class="container contacto">
             <h2 class="section-title text-center" style="color: white;">Contactanos</h2>
             <div id="formResponsive"></div>                             
-            <form id="contact" method="post" action="enviar_correo.php">
+            <form id="contact" method="post" novalidate>
+                <!-- CSRF Token (requerido por procesar.php) -->
+                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['form_token']) ?>">
+ 
+                <!-- Honeypot anti-bots (debe quedar vacío) -->
+                <div style="position: absolute; left: -9999px; top: -9999px;" aria-hidden="true">
+                    <label for="website_check">No completar</label>
+                    <input type="text" name="website_check" id="website_check" tabindex="-1" autocomplete="off">
+                </div>
+ 
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
@@ -498,11 +376,11 @@
                     <label for="consulta" class="form-label">Tu consulta</label>
                     <textarea class="form-control" id="consulta" name="mensaje" rows="3" required></textarea>
                 </div>                     
-                <button name="submit" class="btn btn-primary color-boton" type="submit" id="contact-submit" data-submit="...Enviar">Enviar</button>
+                <button class="btn btn-primary color-boton" type="submit" id="contact-submit">Enviar</button>
             </form>
         </div>    
     </section> 
-
+ 
     <footer class="py-4" id="footer">
         <div class="container text-center">
             <div class="row">
@@ -521,21 +399,11 @@
                 <div class="col-md-4">
                     <h5>Redes Sociales</h5>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/" target="_blank" class="text-white mx-2">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.twitter.com/" target="_blank" class="text-white mx-2">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/" target="_blank" class="text-white mx-2">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/" target="_blank" class="text-white mx-2">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.github.com/" target="_blank" class="text-white mx-2">
-                            <i class="fab fa-github"></i>
-                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com/" target="_blank" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.github.com/" target="_blank" class="text-white mx-2"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -544,7 +412,7 @@
             <p>V. 1.0.22</p>
         </div>
     </footer>
-
+ 
     <!-- ================= MODAL DE CONFIRMACIÓN DE ENVÍO ================= -->
     <div class="modal fade" id="modalEnvio" tabindex="-1" role="dialog" aria-labelledby="modalEnvioLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -562,41 +430,66 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Script para mostrar el modal según el resultado del envío -->
+ 
+    <!-- Envío del formulario por AJAX al procesar.php de Donweb -->
     <script>
       (function () {
-        const params = new URLSearchParams(window.location.search);
-        const enviado = params.get('enviado');
-
-        if (enviado === null) return;
-
-        const titulo = document.getElementById('modalEnvioLabel');
-        const icono  = document.getElementById('modalEnvioIcon');
-        const texto  = document.getElementById('modalEnvioTexto');
-
-        if (enviado === '1') {
-          titulo.textContent = 'Mensaje enviado';
-          icono.className = 'fa-solid fa-circle-check';
-          icono.style.color = '#28a745';
-          texto.textContent = '¡Tu consulta fue enviada con éxito! Te responderemos a la brevedad.';
-        } else {
-          titulo.textContent = 'Error al enviar';
-          icono.className = 'fa-solid fa-circle-xmark';
-          icono.style.color = '#dc3545';
-          texto.textContent = 'Hubo un problema al enviar tu consulta. Por favor, intentá nuevamente en unos minutos.';
+        const form = document.getElementById('contact');
+        const btn  = document.getElementById('contact-submit');
+ 
+        if (!form) return;
+ 
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+ 
+          const textoOriginal = btn.textContent;
+          btn.disabled    = true;
+          btn.textContent = 'Enviando...';
+ 
+          try {
+            const formData = new FormData(form);
+            const res  = await fetch('contacto/procesar.php', {
+              method: 'POST',
+              body: formData
+            });
+            const data = await res.json();
+ 
+            mostrarModal(!!data.success, data.message || (data.success ? 'Mensaje enviado.' : 'No se pudo enviar.'));
+ 
+            if (data.success) {
+              form.reset();
+            }
+          } catch (err) {
+            mostrarModal(false, 'No se pudo conectar con el servidor. Intentá nuevamente en unos minutos.');
+          } finally {
+            btn.disabled    = false;
+            btn.textContent = textoOriginal;
+          }
+        });
+ 
+        function mostrarModal(exito, mensaje) {
+          const titulo = document.getElementById('modalEnvioLabel');
+          const icono  = document.getElementById('modalEnvioIcon');
+          const texto  = document.getElementById('modalEnvioTexto');
+ 
+          if (exito) {
+            titulo.textContent = 'Mensaje enviado';
+            icono.className    = 'fa-solid fa-circle-check';
+            icono.style.color  = '#28a745';
+          } else {
+            titulo.textContent = 'No se pudo enviar';
+            icono.className    = 'fa-solid fa-circle-xmark';
+            icono.style.color  = '#dc3545';
+          }
+ 
+          texto.textContent = mensaje;
+ 
+          const modal = new bootstrap.Modal(document.getElementById('modalEnvio'));
+          modal.show();
         }
-
-        const modalEl = document.getElementById('modalEnvio');
-        const modal = new bootstrap.Modal(modalEl);
-        modal.show();
-
-        // Limpia el ?enviado= de la URL para que no reaparezca al recargar
-        const cleanUrl = window.location.pathname + window.location.hash;
-        window.history.replaceState({}, document.title, cleanUrl);
       })();
     </script>
 </body>
