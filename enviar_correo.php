@@ -1,56 +1,59 @@
 <?php
-/**
- * @version 1.0
- */
-
 require("class.phpmailer.php");
 require("class.smtp.php");
 
-// Valores enviados desde el formulario
-if ( !isset($_POST["nombre"]) || !isset($_POST["email"]) || !isset($_POST["mensaje"]) ) {
-    die ("Es necesario completar todos los datos del formulario");
+if (!isset($_POST["nombre"]) || !isset($_POST["email"]) || !isset($_POST["mensaje"])) {
+    die("Es necesario completar todos los datos del formulario");
 }
-$nombre = $_POST["nombre"];
-$email = $_POST["email"];
+$nombre  = $_POST["nombre"];
+$email   = $_POST["email"];
 $mensaje = $_POST["mensaje"];
 
-// Datos de la cuenta de correo utilizada para enviar vía SMTP
-$smtpHost = "c2701652.ferozo.com";  // Dominio alternativo brindado en el email de alta 
-$smtpUsuario = "comercial@nik-studio.com.ar";  // Mi cuenta de correo
-$smtpClave = "XeBh7l*0";  // Mi contraseña
-
-// Email donde se enviaran los datos cargados en el formulario de contacto
+$smtpHost    = "c2701652.ferozo.com";
+$smtpUsuario = "comercial@nik-studio.com.ar";
+$smtpClave   = "TU_NUEVA_CONTRASEÑA"; // ← cambiala
 $emailDestino = "comercial@nik-studio.com.ar";
 
 $mail = new PHPMailer();
 $mail->IsSMTP();
-$mail->SMTPAuth = true;
-$mail->Port = 465; 
+$mail->SMTPAuth   = true;
+$mail->Host       = $smtpHost;
+$mail->Username   = $smtpUsuario;
+$mail->Password   = $smtpClave;
+$mail->Port       = 465;
 $mail->SMTPSecure = 'ssl';
-$mail->IsHTML(true); 
-$mail->CharSet = "utf-8";
+$mail->CharSet    = "utf-8";
+$mail->IsHTML(true);
 
+// Por si el certificado da problemas en hosting compartido
+$mail->SMTPOptions = array(
+    'ssl' => array(
+        'verify_peer'       => false,
+        'verify_peer_name'  => false,
+        'allow_self_signed' => true
+    )
+);
 
-// VALORES A MODIFICAR //
-$mail->Host = $smtpHost; 
-$mail->Username = $smtpUsuario; 
-$mail->Password = $smtpClave;
+// 🔑 EL FIX CLAVE: From tiene que ser tu casilla autenticada
+$mail->From     = $smtpUsuario;          // NO el email del visitante
+$mail->FromName = "Web - " . $nombre;    // Aclarás de quién viene
+$mail->AddAddress($emailDestino);
+$mail->AddReplyTo($email, $nombre);      // Si respondés, va al visitante
 
-$mail->From = $email; // Email desde donde envío el correo.
-$mail->FromName = $nombre;
-$mail->AddAddress($emailDestino); // Esta es la dirección a donde enviamos los datos del formulario
+$mail->Subject = "Consulta enviada desde la WEB";
+$mensajeHtml   = nl2br(htmlspecialchars($mensaje));
+$mail->Body    = "<b>Nombre:</b> {$nombre}<br><b>Email:</b> {$email}<br><br>{$mensajeHtml}";
+$mail->AltBody = "Nombre: {$nombre}\nEmail: {$email}\n\n{$mensaje}";
 
-$mail->Subject = "Consulta Enviada desde WEB"; // Este es el titulo del email.
-$mensajeHtml = nl2br($mensaje);
-$mail->Body = "{$mensajeHtml} <br /><br />Formulario de ejemplo. By DonWeb<br />"; // Texto del email en formato HTML
-$mail->AltBody = "{$mensaje} \n\n Formulario de ejemplo By DonWeb"; // Texto sin formato HTML
-// FIN - VALORES A MODIFICAR //
+// 🔍 PARA DEBUGGEAR: descomentá estas dos líneas mientras probás
+// $mail->SMTPDebug = 2;
+// $mail->Debugoutput = 'html';
 
-$estadoEnvio = $mail->Send(); 
-if($estadoEnvio){
+if ($mail->Send()) {
     header("Location: index.html");
-    exit; 
+    exit;
 } else {
-    header("Location: error.html");
-    exit; 
+    // En vez de redirigir a error.html ciego, mostrá el error real:
+    echo "Error: " . $mail->ErrorInfo;
+    exit;
 }
