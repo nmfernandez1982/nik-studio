@@ -1,12 +1,27 @@
 <?php
-// ================= SESIÓN Y CSRF (requerido por contacto/procesar.php) =================
-session_start();
- 
+// Forzar cookie de sesión válida para todo el dominio
+// (así /contacto/procesar.php ve la misma sesión que index.php)
+if (session_status() === PHP_SESSION_NONE) {
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path'     => '/',
+        'domain'   => '',
+        'secure'   => !empty($_SERVER['HTTPS']),
+        'httponly' => true,
+        'samesite' => 'Lax',
+    ]);
+    session_start();
+}
+
+// Headers anti-caché para que el token no quede cacheado
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+
 // Generar token CSRF si no existe
 if (empty($_SESSION['form_token'])) {
     $_SESSION['form_token'] = bin2hex(random_bytes(32));
 }
- 
+
 // Marcar momento de carga (para el TimeTrap del procesar.php)
 $_SESSION['form_time'] = time();
 ?>
