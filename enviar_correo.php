@@ -11,7 +11,7 @@ $mensaje = $_POST["mensaje"];
 
 $smtpHost    = "c2701652.ferozo.com";
 $smtpUsuario = "comercial@nik-studio.com.ar";
-$smtpClave   = "TU_NUEVA_CONTRASEÑA"; // ← cambiala
+$smtpClave   = "XeBh7l*0"; // ← cambiala
 $emailDestino = "comercial@nik-studio.com.ar";
 
 $mail = new PHPMailer();
