@@ -19,8 +19,8 @@ return [
     // 2. Google reCAPTCHA (NUEVO)
     'recaptcha' => [
         'activo'     => true, // true = Activado, false = Desactivado
-        'site_key'   => '*******************************',   // Clave pública (HTML)
-        'secret_key' => '*******************************'     // Clave privada (Servidor)
+        'site_key'   => '6Lc_wuMsAAAAAOxFBCmjWrtOCesOvKfE9SKBZHES',   // Clave pública (HTML)
+        'secret_key' => '6Lc_wuMsAAAAADLPLRWSQ9_VRivuNFfG3E1xQ6Lr'     // Clave privada (Servidor)
     ],
 
     // 3. Activación de Campos
