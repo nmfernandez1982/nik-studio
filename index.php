@@ -1,12 +1,27 @@
 <?php
-// >>> FIX SESIONES (ruta compartida con /contacto/index.php) <
+// >>> FIX SESIONES FORZADO + DEBUG <
 $session_path = '/home/c2701652/public_html/tmp_sessions';
-if (is_dir($session_path) && is_writable($session_path)) {
-    session_save_path($session_path);
+
+// Diagnóstico temporal (lo sacamos después)
+echo "<!-- DEBUG SESIONES:\n";
+echo "Ruta: $session_path\n";
+echo "Existe carpeta: " . (is_dir($session_path) ? 'SI' : 'NO') . "\n";
+echo "Es escribible: " . (is_writable($session_path) ? 'SI' : 'NO') . "\n";
+echo "Permisos: " . (is_dir($session_path) ? substr(sprintf('%o', fileperms($session_path)), -4) : 'N/A') . "\n";
+echo "Save path actual ANTES: " . session_save_path() . "\n";
+
+// Crear carpeta si no existe
+if (!is_dir($session_path)) {
+    @mkdir($session_path, 0755, true);
 }
 
+// Forzar la ruta SIEMPRE, sin condicional
+session_save_path($session_path);
+
+echo "Save path actual DESPUES: " . session_save_path() . "\n";
+echo "-->\n";
+
 // Forzar cookie de sesión válida para todo el dominio
-// (así /contacto/procesar.php ve la misma sesión que index.php)
 if (session_status() === PHP_SESSION_NONE) {
     session_set_cookie_params([
         'lifetime' => 0,
