@@ -1,4 +1,10 @@
 <?php
+// >>> FIX SESIONES (ruta compartida con /contacto/index.php) <
+$session_path = '/home/c2701652/public_html/tmp_sessions';
+if (is_dir($session_path) && is_writable($session_path)) {
+    session_save_path($session_path);
+}
+
 // Forzar cookie de sesión válida para todo el dominio
 // (así /contacto/procesar.php ve la misma sesión que index.php)
 if (session_status() === PHP_SESSION_NONE) {
