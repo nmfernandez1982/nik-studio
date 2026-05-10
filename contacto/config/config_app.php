@@ -5,15 +5,15 @@ defined('ACCESO_SEGURO') or die('Acceso denegado');
 return [
     // 1. Configuración SMTP (Tus datos de DonWeb/Dattaweb)
     'smtp' => [
-        'host'       => 'vps-3454342-x.dattaweb.com', // Ejemplo
+        'host'       => 'c2701652.ferozo.com',
         'auth'       => true,
-        'username'   => 'support@entregabilidad.com.ar',
-        'password'   => '********',
-        'secure'     => 'ssl', // opciones: 'ssl', 'tls', null
+        'username'   => 'comercial@nik-studio.com.ar',
+        'password'   => 'XeBh7l*0',
+        'secure'     => 'ssl',
         'port'       => 465,
-        'debug'      => 2, // 0 para producción, 2 para desarrollo
-        'from_name'  => 'Entregabilidad - Formulario Web',
-        'recipient'  => 'aentregabilidad@gmail.com' // Dónde llega el email
+        'debug'      => 0, // 0 para producción, 2 mientras probás
+        'from_name'  => 'Web Nik-Studio - Formulario',
+        'recipient'  => 'comercial@nik-studio.com.ar'
     ],
 
     // 2. Google reCAPTCHA (NUEVO)
