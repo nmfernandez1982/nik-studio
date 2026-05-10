@@ -1,50 +1,11 @@
 <?php
-// >>> FIX SESIONES FORZADO + DEBUG <
-$session_path = '/home/c2701652/public_html/tmp_sessions';
-
-// Diagnóstico temporal (lo sacamos después)
-echo "<!-- DEBUG SESIONES:\n";
-echo "Ruta: $session_path\n";
-echo "Existe carpeta: " . (is_dir($session_path) ? 'SI' : 'NO') . "\n";
-echo "Es escribible: " . (is_writable($session_path) ? 'SI' : 'NO') . "\n";
-echo "Permisos: " . (is_dir($session_path) ? substr(sprintf('%o', fileperms($session_path)), -4) : 'N/A') . "\n";
-echo "Save path actual ANTES: " . session_save_path() . "\n";
-
-// Crear carpeta si no existe
-if (!is_dir($session_path)) {
-    @mkdir($session_path, 0755, true);
-}
-
-// Forzar la ruta SIEMPRE, sin condicional
-session_save_path($session_path);
-
-echo "Save path actual DESPUES: " . session_save_path() . "\n";
-echo "-->\n";
-
-// Forzar cookie de sesión válida para todo el dominio
-if (session_status() === PHP_SESSION_NONE) {
-    session_set_cookie_params([
-        'lifetime' => 0,
-        'path'     => '/',
-        'domain'   => '',
-        'secure'   => !empty($_SERVER['HTTPS']),
-        'httponly' => true,
-        'samesite' => 'Lax',
-    ]);
-    session_start();
-}
-
-// Headers anti-caché para que el token no quede cacheado
-header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-header('Pragma: no-cache');
+session_start();
 
 // Generar token CSRF si no existe
 if (empty($_SESSION['form_token'])) {
     $_SESSION['form_token'] = bin2hex(random_bytes(32));
+    $_SESSION['form_time'] = time();
 }
-
-// Marcar momento de carga (para el TimeTrap del procesar.php)
-$_SESSION['form_time'] = time();
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -7,25 +7,7 @@
  * - Anti-Spam (Honeypot + TimeTrap)
  */
 
-// >>> FIX SESIONES (misma ruta que el index.php raíz) <
-$session_path = '/home/c2701652/public_html/tmp_sessions';
-if (is_dir($session_path) && is_writable($session_path)) {
-    session_save_path($session_path);
-}
-
-// Misma config de cookies que el index.php raíz, para compartir sesión entre / y /contacto/
-if (session_status() === PHP_SESSION_NONE) {
-    session_set_cookie_params([
-        'lifetime' => 0,
-        'path'     => '/',
-        'domain'   => '',
-        'secure'   => !empty($_SERVER['HTTPS']),
-        'httponly' => true,
-        'samesite' => 'Lax',
-    ]);
-    session_start();
-}
-
+session_start();
 header('Content-Type: application/json; charset=utf-8');
 
 $response = ['success' => false, 'message' => ''];
