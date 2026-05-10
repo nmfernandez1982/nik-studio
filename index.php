@@ -6,6 +6,12 @@ if (empty($_SESSION['form_token'])) {
     $_SESSION['form_token'] = bin2hex(random_bytes(32));
     $_SESSION['form_time'] = time();
 }
+
+// Cargar config para obtener la site_key del reCAPTCHA
+define('ACCESO_SEGURO', true);
+$conf = require __DIR__ . '/contacto/config/config_app.php';
+$recaptcha_site_key = $conf['recaptcha']['site_key'] ?? '';
+$recaptcha_activo   = $conf['recaptcha']['activo'] ?? false;
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,6 +27,11 @@ if (empty($_SESSION['form_token'])) {
     <link href="css/style20.css" rel="stylesheet">
     <link rel="icon" href="Favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <?php if ($recaptcha_activo): ?>
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <?php endif; ?>
 </head>
 <body>
     <!-- Navbar -->
@@ -372,7 +383,15 @@ if (empty($_SESSION['form_token'])) {
                 <div class="mb-3">
                     <label for="consulta" class="form-label">Tu consulta</label>
                     <textarea class="form-control" id="consulta" name="mensaje" rows="3" required></textarea>
-                </div>                     
+                </div>
+
+                <?php if ($recaptcha_activo && !empty($recaptcha_site_key)): ?>
+                <!-- Google reCAPTCHA Widget -->
+                <div class="mb-3 d-flex justify-content-center">
+                    <div class="g-recaptcha" data-sitekey="<?= htmlspecialchars($recaptcha_site_key) ?>"></div>
+                </div>
+                <?php endif; ?>
+
                 <button class="btn btn-primary color-boton" type="submit" id="contact-submit">Enviar</button>
             </form>
         </div>    
@@ -455,9 +474,13 @@ if (empty($_SESSION['form_token'])) {
             const data = await res.json();
  
             mostrarModal(!!data.success, data.message || (data.success ? 'Mensaje enviado.' : 'No se pudo enviar.'));
- 
+
             if (data.success) {
               form.reset();
+              // Resetear el reCAPTCHA si está activo
+              if (window.grecaptcha) {
+                grecaptcha.reset();
+              }
             }
           } catch (err) {
             mostrarModal(false, 'No se pudo conectar con el servidor. Intentá nuevamente en unos minutos.');
