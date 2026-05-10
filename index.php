@@ -382,7 +382,7 @@ $recaptcha_activo   = $conf['recaptcha']['activo'] ?? false;
                 </div>
                 <div class="mb-3">
                     <label for="consulta" class="form-label">Tu consulta</label>
-                    <textarea class="form-control" id="consulta" name="mensaje" rows="3" required></textarea>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
                 </div>
 
                 <?php if ($recaptcha_activo && !empty($recaptcha_site_key)): ?>

@@ -26,9 +26,9 @@ return [
     // 3. Activación de Campos
     'campos' => [
         'nombre'    => ['activo' => true,  'requerido' => true],
-        'apellido'  => ['activo' => true,  'requerido' => true],
+        'apellido'  => ['activo' => false,  'requerido' => false],
         'email'     => ['activo' => true,  'requerido' => true], // Email siempre es vital
-        'telefono'  => ['activo' => true,  'requerido' => false],
+        'telefono'  => ['activo' => false,  'requerido' => false],
         'direccion' => ['activo' => false, 'requerido' => false],
         'pais'      => ['activo' => false, 'requerido' => false],
         'mensaje'   => ['activo' => true,  'requerido' => true],
